@@ -145,8 +145,10 @@ class PyAirControl:
         connected = False
 
     def onConnect(self, Connection, Status, Description):
+        pass
 
     def onMessage(self, Connection, Data):
+        pass
 
     def onCommand(self, Unit, Command, Level, Hue):
         devname = self.devices[Unit-1][0]
@@ -154,7 +156,7 @@ class PyAirControl:
             "onCommand called for Unit " + str(Unit) + ": Parameter '" + str(devname) + "', Level: " + str(Level))
 
         if devname == "rhset":
-             self._set(devname, Level+40)
+             self._set("rhset", Level+40)
         elif devname == "aqil":
              if Level ==  10:
                  self._set(devname, 25)
@@ -188,8 +190,10 @@ class PyAirControl:
            self._set(devname, str(newvalue))
 
     def onNotification(self, Name, Subject, Text, Status, Priority, Sound, ImageFile):
+        pass
 
     def onDisconnect(self, Connection):
+        pass
 
     def onHeartbeat(self):
         if (int(time.time()) - self.lastUpdate) > 600:
