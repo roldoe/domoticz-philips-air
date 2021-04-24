@@ -5,10 +5,11 @@ The logic is based on the py-air-control python module, but that module containe
 
 Installation
 ---
-Python 3.4+ is required and a plugin for COAP. Install with pip3:
+Python 3.4+ is required and a plugin for COAP and Cryptodome. Install with pip3:
 
 ```
 sudo pip3 install -U git+https://github.com/Tanganelli/CoAPthon3@3dc7e5c8d64cc1b10ed36141836ec5ba94fba0c7
+sudo pip3 install pycryptodomex
 ```
 
 Create in the domoticz/plugins folder another directory called 'Philips'.
@@ -17,5 +18,3 @@ Move the plugin.py into this directory and restart domoticz
 Configuration
 ---
 After installation you need to figure out the IP of the device. This plugin only works with COAP compatible devices. 
-
-

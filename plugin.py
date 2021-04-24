@@ -22,8 +22,6 @@ import logging
 import os
 
 import Domoticz
-import pyairctrl.coap_client
-import pyairctrl.airctrl
 
 from coapthon import defines
 from coapthon.client.helperclient import HelperClient
@@ -70,7 +68,7 @@ class PyAirControl:
     def checkDevices(self):
         for index, (_, name, type_, subtype, switchtype, image, options) in enumerate(self.devices):
             if index + 1 not in Devices and type_ != 0:
-                Domoticz.Log("Create device " + name + " image " + image)
+                Domoticz.Log("Create device " + name + " image " + str(image))
                 Domoticz.Device(Name=name, Unit=index + 1, Type=type_, Subtype=subtype, Switchtype=switchtype, Image=image, Options=options).Create()
 
     def updateDevices(self, status):
